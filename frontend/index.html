@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestor de Tareas</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+
+<body>
+    <div id="app" class="dashboard">
+        <aside class="sidebar">
+            <div class="brand">
+                <div class="logo"></div>
+                <h2>Gestor de <span>tareas</span></h2>
+            </div>
+            <div class="input-section">
+                <label>NUEVA TAREA</label>
+                <textarea v-model="newTaskText" placeholder="Escribe tu tarea aquí..."
+                    @keyup.enter="addTask"></textarea>
+                <button @click="addTask" class="btn-add">Agregar tarea</button>
+            </div>
+            <div v-if="loading" class="sync-status">
+                <div class="spinner"></div> Sincronizando...
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <header class="content-header">
+                <h3>Tareas Activas ({{ tasks.length }})</h3>
+            </header>
+            <div class="task-grid">
+                <div v-for="task in tasks" :key="task.id" class="task-card">
+                    <div class="task-info">
+                        <span class="task-id">#{{ task.id.toString().slice(-4) }}</span>
+                        <p>{{ task.text }}</p>
+                    </div>
+                    <button @click="deleteTask(task.id)" class="btn-icon-delete">✕</button>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>
