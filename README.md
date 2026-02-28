@@ -1,4 +1,4 @@
-# Funcionamiento del Sistema: The Persistence Tasker 🚀
+# Funcionamiento del Sistema: Gestor de Tareas🚀
 
 Este sistema es una aplicación de gestión de tareas que utiliza una arquitectura de comunicación asíncrona (AJAX). A continuación se detalla cómo interactúan el Frontend y el Backend:
 
@@ -36,5 +36,5 @@ El sistema confirma cada operación mediante mensajes en la terminal del servido
 
 ---
 
-## ✅ Conclusión Técnica
+
 El sistema cumple con el objetivo de mantener una **sincronización constante** entre la interfaz de usuario y el servidor de datos, utilizando el estándar JSON para asegurar que la información sea persistente y la navegación sea fluida (Single Page Application).
